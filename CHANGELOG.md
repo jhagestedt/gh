@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/jhagestedt/gh/compare/1.2.0...1.3.0) (2022-08-31)
+
+
+### Features
+
+* **docker:** remove workdir and user ([8e290e8](https://github.com/jhagestedt/gh/commit/8e290e89da28c5c3303bef66703173b010589553))
+
 # [1.2.0](https://github.com/jhagestedt/gh/compare/1.1.0...1.2.0) (2022-08-31)
 
 

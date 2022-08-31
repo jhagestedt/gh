@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/jhagestedt/gh/compare/1.1.0...1.2.0) (2022-08-31)
+
+
+### Features
+
+* **docker:** set user in docker ([7737a3b](https://github.com/jhagestedt/gh/commit/7737a3ba1e36e3a56eaba9f41f51834e873907fd))
+
 # [1.1.0](https://github.com/jhagestedt/gh/compare/1.0.1...1.1.0) (2022-08-31)
 
 

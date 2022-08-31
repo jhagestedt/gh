@@ -11,5 +11,6 @@ RUN curl -L "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH
     cp /tmp/gh/bin/gh /usr/local/bin/gh && chmod +x /usr/local/bin/gh
 RUN gh version
 
+WORKDIR /work
 ENTRYPOINT ["/usr/local/bin/gh"]
 CMD ["version"]

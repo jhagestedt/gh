@@ -1,6 +1,6 @@
 # gh
 
-Just a small alpine based container with `curl` and `gh` cli installed.
+Just a small alpine based container with `git`, `curl` and `gh` cli installed.
 
 ## Usage
 

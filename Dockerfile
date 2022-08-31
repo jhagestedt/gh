@@ -1,7 +1,7 @@
 FROM alpine:3.16
 
 RUN apk update
-RUN apk --no-cache add bash curl ca-certificates
+RUN apk --no-cache add bash ca-certificates curl git
 
 ARG GH_VERSION=2.14.7
 ARG GH_ARCHITECTURE=linux_amd64

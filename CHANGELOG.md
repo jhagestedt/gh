@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jhagestedt/gh/compare/1.0.1...1.1.0) (2022-08-31)
+
+
+### Features
+
+* **docker:** set workdir in docker ([fd161b7](https://github.com/jhagestedt/gh/commit/fd161b797ccdf7c51bd16af9083dbc55aee0fed4))
+
 ## [1.0.1](https://github.com/jhagestedt/gh/compare/1.0.0...1.0.1) (2022-08-31)
 
 

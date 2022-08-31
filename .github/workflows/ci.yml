@@ -42,7 +42,7 @@ jobs:
       DOCKER_REGISTRY_HOST: docker.io
       DOCKER_REGISTRY_PATH: jhagestedt/gh
       DOCKER_REGISTRY_USERNAME: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-      DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+      DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
       VERSION: ${{ needs.version.outputs.version }}
     steps:
     - id: checkout
@@ -54,8 +54,8 @@ jobs:
       name: docker-login
       run: |
         echo "${DOCKER_REGISTRY_PASSWORD}" | \
-        docker login ${DOCKER_REGISTRY_HOST} \
-        --username ${DOCKER_REGISTRY_USERNAME} \
+        docker login "${DOCKER_REGISTRY_HOST}" \
+        --username "${DOCKER_REGISTRY_USERNAME}" \
         --password-stdin
     - id: docker-build
       name: docker-build

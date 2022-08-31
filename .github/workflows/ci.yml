@@ -74,8 +74,8 @@ jobs:
       name: docker-push
       run: |
         docker push "${DOCKER_REGISTRY_HOST}/${DOCKER_REGISTRY_PATH}:${VERSION}"
-    - id: docker-push
-      name: docker-push
+    - id: docker-push-latest
+      name: docker-push-latest
       if: ${{ github.ref_type == 'tag' }}
       run: |
         docker push "${DOCKER_REGISTRY_HOST}/${DOCKER_REGISTRY_PATH}:latest"

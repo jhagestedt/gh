@@ -12,7 +12,5 @@ COPY --from=download /tmp/bin/gh /usr/local/bin/gh
 RUN gh version
 RUN apk update
 RUN apk --no-cache add bash ca-certificates curl git
-USER 1000:1000
-WORKDIR /work
 ENTRYPOINT ["/usr/local/bin/gh"]
 CMD ["version"]

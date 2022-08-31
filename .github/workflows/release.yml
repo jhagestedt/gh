@@ -32,7 +32,7 @@ jobs:
     - id: release
       name: release
       env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
         npm install
         npm run release

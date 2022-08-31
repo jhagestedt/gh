@@ -69,13 +69,13 @@ jobs:
         docker build . \
         --file ./Dockerfile \
         --tag "${DOCKER_REGISTRY_HOST}/${DOCKER_REGISTRY_PATH}:latest"
-      if: ${{ github.ref_type == "tag" }}
+      if: ${{ github.ref_type == 'tag' }}
     - id: docker-push
       name: docker-push
       run: |
         docker push "${DOCKER_REGISTRY_HOST}/${DOCKER_REGISTRY_PATH}:${VERSION}"
     - id: docker-push
       name: docker-push
-      if: ${{ github.ref_type == "tag" }}
+      if: ${{ github.ref_type == 'tag' }}
       run: |
         docker push "${DOCKER_REGISTRY_HOST}/${DOCKER_REGISTRY_PATH}:latest"

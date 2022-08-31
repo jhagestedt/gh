@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/jhagestedt/gh/compare/1.0.0...1.0.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* **docker:** add git executable ([36ce035](https://github.com/jhagestedt/gh/commit/36ce035b8ed789626c282fbaea1e4d4a6242af02))
+
 # 1.0.0 (2022-08-31)
 
 

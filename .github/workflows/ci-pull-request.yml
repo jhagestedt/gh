@@ -1,0 +1,25 @@
+name: ci-pull-request
+
+on:
+  pull_request:
+    branches: [main]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-app:
+    name: build-app
+    runs-on: ubuntu-latest
+    steps:
+    - id: checkout
+      name: checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - id: docker-build
+      name: docker-build
+      run: |
+        docker build . \
+        --file ./Dockerfile

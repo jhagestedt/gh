@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/jhagestedt/gh/compare/1.4.0...1.5.0) (2022-09-12)
+
+
+### Features
+
+* **docker:** ghapp cli update to 1.1.2 ([#2](https://github.com/jhagestedt/gh/issues/2)) ([f1dacf3](https://github.com/jhagestedt/gh/commit/f1dacf332e01fb84624d9a63a6031da13d232606))
+
 # [1.4.0](https://github.com/jhagestedt/gh/compare/1.3.0...1.4.0) (2022-09-12)
 
 

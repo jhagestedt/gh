@@ -1,9 +1,11 @@
 # gh
 
-Just a small alpine based container with `git`, `curl` and `gh` cli installed.
+Just a small alpine based container with `git`, `curl`, `gh` and `ghapp` installed.
 
 ## Usage
 
+The container is published at [Dockerhub](https://hub.docker.com/repository/docker/jhagestedt/gh).
+
 ```bash
-docker run -e GITHUB_TOKEN=xxx -v $(pwd):$(pwd) -w $(pwd) jhagestedt/gh version
+docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" -e GITHUB_TOKEN jhagestedt/gh version
 ```

@@ -2,7 +2,7 @@ name: release
 
 on:
   workflow_dispatch:
-    branches: [main]
+    branches: [ main ]
 
 defaults:
   run:
@@ -19,20 +19,20 @@ jobs:
     name: release
     runs-on: ubuntu-latest
     steps:
-    - id: checkout
-      name: checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - id: setup-node
-      name: setup-node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - id: release
-      name: release
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
-      run: |
-        npm install
-        npm run release
+      - id: checkout
+        name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - id: setup-node
+        name: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - id: release
+        name: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          npm install
+          npm run release

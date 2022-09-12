@@ -8,11 +8,9 @@ RUN curl -sL "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${G
     tar --extract --file /tmp/gh.tar.gz --strip-components 1 --directory /tmp && rm /tmp/gh.tar.gz && \
     mv /tmp/bin/gh /usr/local/bin/gh && \
     chmod +x /usr/local/bin/gh
-RUN gh --version
 ARG GHAPP_VERSION=1.1.1
 RUN curl -sL "https://github.com/jhagestedt/ghapp/releases/download/${GHAPP_VERSION}/ghapp_${TARGETOS}_${TARGETARCH}" -o /usr/local/bin/ghapp && \
     chmod +x /usr/local/bin/ghapp
-RUN ghapp --version
 
 FROM --platform=${TARGETPLATFORM} alpine:3.16 AS main
 COPY --from=download /usr/local/bin/gh /usr/local/bin/gh

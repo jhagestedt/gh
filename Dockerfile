@@ -8,14 +8,15 @@ RUN curl -sL "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${G
     tar --extract --file /tmp/gh.tar.gz --strip-components 1 --directory /tmp && rm /tmp/gh.tar.gz && \
     mv /tmp/bin/gh /usr/local/bin/gh && \
     chmod +x /usr/local/bin/gh
-ARG GHAPP_VERSION=1.1.1
+ARG GHAPP_VERSION=1.1.2
 RUN curl -sL "https://github.com/jhagestedt/ghapp/releases/download/${GHAPP_VERSION}/ghapp_${TARGETOS}_${TARGETARCH}" -o /usr/local/bin/ghapp && \
     chmod +x /usr/local/bin/ghapp
 
 FROM --platform=${TARGETPLATFORM} alpine:3.16 AS main
 COPY --from=download /usr/local/bin/gh /usr/local/bin/gh
 COPY --from=download /usr/local/bin/ghapp /usr/local/bin/ghapp
-RUN gh version
+RUN gh --version
+RUN ghapp --version
 RUN apk update
 RUN apk --no-cache add bash ca-certificates curl git
 ENTRYPOINT ["/usr/local/bin/gh"]

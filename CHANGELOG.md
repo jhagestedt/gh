@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/jhagestedt/gh/compare/1.5.0...1.6.0) (2022-10-07)
+
+
+### Features
+
+* **docker:** add httpie ([#3](https://github.com/jhagestedt/gh/issues/3)) ([0880deb](https://github.com/jhagestedt/gh/commit/0880deb4e320ddc74bd0aaee0f4854700eaaec1b))
+
 # [1.5.0](https://github.com/jhagestedt/gh/compare/1.4.0...1.5.0) (2022-09-12)
 
 

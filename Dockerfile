@@ -12,14 +12,12 @@ ARG GHAPP_VERSION=1.1.3
 RUN curl -sL "https://github.com/jhagestedt/ghapp/releases/download/${GHAPP_VERSION}/ghapp_${TARGETOS}_${TARGETARCH}" -o /usr/local/bin/ghapp && \
     chmod +x /usr/local/bin/ghapp
 
-FROM --platform=${TARGETPLATFORM} python:3-alpine AS main
+FROM --platform=${TARGETPLATFORM} alpine:3.16 AS main
 COPY --from=download /usr/local/bin/gh /usr/local/bin/gh
 COPY --from=download /usr/local/bin/ghapp /usr/local/bin/ghapp
 RUN gh --version
 RUN ghapp --version
-RUN python -m pip install --upgrade pip wheel httpie
-RUN http --version
 RUN apk update
-RUN apk --no-cache add bash ca-certificates curl git
+RUN apk --no-cache add bash ca-certificates curl git httpie
 ENTRYPOINT ["/usr/local/bin/gh"]
 CMD ["version"]

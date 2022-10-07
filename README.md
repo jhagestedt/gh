@@ -1,6 +1,6 @@
 # gh
 
-Just a small alpine based container with `git`, `curl`, `gh` and `ghapp` installed.
+Just a small alpine based container with `git`, `curl`, `httpie`, `gh` and `ghapp` installed.
 
 ## Usage
 

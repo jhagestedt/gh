@@ -1,4 +1,4 @@
-FROM --platform=${TARGETPLATFORM} alpine:3.16 AS download
+FROM --platform=${TARGETPLATFORM} alpine:3.17.0 AS download
 ARG TARGETOS
 ARG TARGETARCH
 RUN apk update
@@ -12,7 +12,7 @@ ARG GHAPP_VERSION=1.1.3
 RUN curl -sL "https://github.com/jhagestedt/ghapp/releases/download/${GHAPP_VERSION}/ghapp_${TARGETOS}_${TARGETARCH}" -o /usr/local/bin/ghapp && \
     chmod +x /usr/local/bin/ghapp
 
-FROM --platform=${TARGETPLATFORM} alpine:3.16 AS main
+FROM --platform=${TARGETPLATFORM} alpine:3.17.0 AS main
 COPY --from=download /usr/local/bin/gh /usr/local/bin/gh
 COPY --from=download /usr/local/bin/ghapp /usr/local/bin/ghapp
 RUN gh --version

@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/jhagestedt/gh/compare/1.6.0...1.7.0) (2022-12-06)
+
+
+### Features
+
+* **docker:** add curlie ([#8](https://github.com/jhagestedt/gh/issues/8)) ([b2b9939](https://github.com/jhagestedt/gh/commit/b2b993979e8a2d5b934f716deedd3fa04f0e7cab))
+
 # [1.6.0](https://github.com/jhagestedt/gh/compare/1.5.0...1.6.0) (2022-10-07)
 
 

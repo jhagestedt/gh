@@ -11,19 +11,18 @@ RUN curl -sL "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${G
 ARG GHAPP_VERSION=1.1.3
 RUN curl -sL "https://github.com/jhagestedt/ghapp/releases/download/${GHAPP_VERSION}/ghapp_${TARGETOS}_${TARGETARCH}" -o /usr/local/bin/ghapp && \
     chmod +x /usr/local/bin/ghapp
-ARG CURLIE_VERSION=1.6.9
-RUN curl -sL "https://github.com/rs/curlie/releases/download/v${CURLIE_VERSION}/curlie_${CURLIE_VERSION}_${TARGETOS}_${TARGETARCH}.tar.gz" -o /tmp/curlie.tar.gz && \
-    tar --extract --file /tmp/curlie.tar.gz --directory /tmp && rm /tmp/curlie.tar.gz && \
-    mv /tmp/curlie /usr/local/bin/curlie && \
-    chmod +x /usr/local/bin/curlie
+ARG JQ_VERSION=1.6
+RUN curl -sL "https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64" -o /usr/local/bin/jq && \
+    chmod +x /usr/local/bin/jq
 
 FROM --platform=${TARGETPLATFORM} alpine:3.17 AS main
 COPY --from=download /usr/local/bin/gh /usr/local/bin/gh
 COPY --from=download /usr/local/bin/ghapp /usr/local/bin/ghapp
-COPY --from=download /usr/local/bin/curlie /usr/local/bin/curlie
+COPY --from=download /usr/local/bin/jq /usr/local/bin/jq
 RUN gh --version
 RUN ghapp --version
+RUN jq --version
 RUN apk update
-RUN apk --no-cache add bash ca-certificates curl git httpie
+RUN apk --no-cache add bash ca-certificates curl gettext git httpie
 ENTRYPOINT ["/usr/local/bin/gh"]
 CMD ["version"]

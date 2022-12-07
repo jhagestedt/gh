@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/jhagestedt/gh/compare/1.7.0...1.8.0) (2022-12-07)
+
+
+### Features
+
+* **docker:** drop curlie but add envsubst and jq ([#9](https://github.com/jhagestedt/gh/issues/9)) ([e0ff9ef](https://github.com/jhagestedt/gh/commit/e0ff9eff3b286a1b76c574af78f3ddb69b9e8cb3))
+
 # [1.7.0](https://github.com/jhagestedt/gh/compare/1.6.0...1.7.0) (2022-12-06)
 
 
